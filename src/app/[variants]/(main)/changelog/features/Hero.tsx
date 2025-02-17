@@ -8,7 +8,7 @@ import { Flexbox } from 'react-layout-kit';
 import urlJoin from 'url-join';
 
 import { BRANDING_NAME } from '@/const/branding';
-import { OFFICIAL_SITE, X } from '@/const/url';
+import { OFFICIAL_SITE } from '@/const/url';
 
 import GridLayout from './GridLayout';
 
@@ -28,9 +28,6 @@ const Hero = memo(() => {
             {t('actions.versions')}
           </Link>
           <div style={{ color: theme.colorInfo }}>·</div>
-          <Link href={X} target={'_blank'}>
-            {t('actions.followOnX')}
-          </Link>
         </Flexbox>
       </Flexbox>
     </GridLayout>

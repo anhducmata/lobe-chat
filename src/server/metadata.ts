@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import qs from 'query-string';
 
-import { BRANDING_NAME } from '@/const/branding';
 import { DEFAULT_LANG } from '@/const/locale';
 import { OG_URL } from '@/const/url';
 import { Locales, locales } from '@/locales/resources';
@@ -33,8 +32,10 @@ export class Meta {
     // eslint-disable-next-line no-param-reassign
     const formatedTitle = formatTitleLength(title, 21);
     // eslint-disable-next-line no-param-reassign
+
+    const websiteTitle = 'Chat Mata';
     const formatedDescription = formatDescLength(description, tags);
-    const siteTitle = title.includes(BRANDING_NAME) ? title : title + ` · ${BRANDING_NAME}`;
+    const siteTitle = title.includes(websiteTitle) ? title : title + ` · ${websiteTitle}`;
     return {
       alternates: {
         canonical:

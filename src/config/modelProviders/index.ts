@@ -3,12 +3,10 @@ import { ChatModelCard, ModelProviderCard } from '@/types/llm';
 import Ai21Provider from './ai21';
 import Ai360Provider from './ai360';
 import AnthropicProvider from './anthropic';
-import AzureProvider from './azure';
 import BaichuanProvider from './baichuan';
 import BedrockProvider from './bedrock';
 import CloudflareProvider from './cloudflare';
 import DeepSeekProvider from './deepseek';
-import DoubaoProvider from './doubao';
 import FireworksAIProvider from './fireworksai';
 import GiteeAIProvider from './giteeai';
 import GithubProvider from './github';
@@ -18,7 +16,6 @@ import HigressProvider from './higress';
 import HuggingFaceProvider from './huggingface';
 import HunyuanProvider from './hunyuan';
 import InternLMProvider from './internlm';
-import LMStudioProvider from './lmstudio';
 import MinimaxProvider from './minimax';
 import MistralProvider from './mistral';
 import MoonshotProvider from './moonshot';
@@ -34,7 +31,6 @@ import SiliconCloudProvider from './siliconcloud';
 import SparkProvider from './spark';
 import StepfunProvider from './stepfun';
 import TaichuProvider from './taichu';
-import TencentcloudProvider from './tencentcloud';
 import TogetherAIProvider from './togetherai';
 import UpstageProvider from './upstage';
 import VLLMProvider from './vllm';
@@ -87,50 +83,7 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
   HigressProvider.chatModels,
 ].flat();
 
-export const DEFAULT_MODEL_PROVIDER_LIST = [
-  OpenAIProvider,
-  { ...AzureProvider, chatModels: [] },
-  OllamaProvider,
-  VLLMProvider,
-  AnthropicProvider,
-  BedrockProvider,
-  GoogleProvider,
-  DeepSeekProvider,
-  HuggingFaceProvider,
-  OpenRouterProvider,
-  CloudflareProvider,
-  GithubProvider,
-  NovitaProvider,
-  NvidiaProvider,
-  TogetherAIProvider,
-  FireworksAIProvider,
-  GroqProvider,
-  PerplexityProvider,
-  MistralProvider,
-  Ai21Provider,
-  UpstageProvider,
-  XAIProvider,
-  QwenProvider,
-  WenxinProvider,
-  TencentcloudProvider,
-  HunyuanProvider,
-  ZhiPuProvider,
-  SiliconCloudProvider,
-  ZeroOneProvider,
-  SparkProvider,
-  SenseNovaProvider,
-  StepfunProvider,
-  MoonshotProvider,
-  BaichuanProvider,
-  MinimaxProvider,
-  LMStudioProvider,
-  InternLMProvider,
-  HigressProvider,
-  GiteeAIProvider,
-  TaichuProvider,
-  Ai360Provider,
-  DoubaoProvider,
-];
+export const DEFAULT_MODEL_PROVIDER_LIST = [OpenAIProvider, TogetherAIProvider];
 
 export const filterEnabledModels = (provider: ModelProviderCard) => {
   return provider.chatModels.filter((v) => v.enabled).map((m) => m.id);

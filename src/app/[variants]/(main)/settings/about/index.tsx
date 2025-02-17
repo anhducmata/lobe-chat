@@ -1,6 +1,5 @@
 'use client';
 
-import { SiDiscord, SiGithub, SiMedium, SiRss, SiX } from '@icons-pack/react-simple-icons';
 import { Form } from '@lobehub/ui';
 import { Divider } from 'antd';
 import { createStyles } from 'antd-style';
@@ -10,16 +9,11 @@ import { Flexbox } from 'react-layout-kit';
 
 import { BRANDING_NAME } from '@/const/branding';
 import {
-  BLOG,
-  DISCORD,
   EMAIL_BUSINESS,
   EMAIL_SUPPORT,
-  GITHUB,
-  MEDIDUM,
   OFFICIAL_SITE,
   PRIVACY_URL,
   TERMS_URL,
-  X,
   mailTo,
 } from '@/const/url';
 import { useServerConfigStore } from '@/store/serverConfig';
@@ -27,7 +21,6 @@ import { serverConfigSelectors } from '@/store/serverConfig/selectors';
 
 import AboutList from './features/AboutList';
 import Analytics from './features/Analytics';
-import ItemCard from './features/ItemCard';
 import ItemLink from './features/ItemLink';
 import Version from './features/Version';
 
@@ -78,45 +71,6 @@ const Page = memo<{ mobile?: boolean }>(({ mobile }) => {
           />
           <Divider style={{ marginBlock: 0 }} />
           <div className={styles.title}>{t('information')}</div>
-          <AboutList
-            ItemRender={ItemCard}
-            grid
-            items={[
-              {
-                href: BLOG,
-                icon: SiRss,
-                label: t('blog'),
-                value: 'blog',
-              },
-              {
-                href: GITHUB,
-                icon: SiGithub,
-                label: 'GitHub',
-                value: 'feedback',
-              },
-              {
-                href: DISCORD,
-                icon: SiDiscord,
-                label: 'Discord',
-                value: 'discord',
-              },
-              {
-                href: X,
-                icon: SiX as any,
-                label: 'X / Twitter',
-                value: 'x',
-              },
-
-              {
-                href: MEDIDUM,
-                icon: SiMedium,
-                label: 'Medium',
-                value: 'medium',
-              },
-            ]}
-          />
-          <Divider style={{ marginBlock: 0 }} />
-          <div className={styles.title}>{t('legal')}</div>
           <AboutList
             ItemRender={ItemLink}
             items={[

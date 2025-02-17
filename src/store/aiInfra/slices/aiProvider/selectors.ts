@@ -23,7 +23,7 @@ const activeProviderConfig = (s: AIProviderStoreState) => s.aiProviderDetail;
 const isAiProviderConfigLoading = (id: string) => (s: AIProviderStoreState) =>
   s.activeAiProvider !== id;
 
-const providerWhitelist = new Set(['ollama']);
+const providerWhitelist = new Set(['ollama', 'togetherai']);
 
 const activeProviderKeyVaults = (s: AIProviderStoreState) => activeProviderConfig(s)?.keyVaults;
 

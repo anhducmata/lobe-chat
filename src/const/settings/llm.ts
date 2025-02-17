@@ -12,6 +12,9 @@ export const DEFAULT_LLM_CONFIG = genUserLLMConfig({
   openai: {
     enabled: true,
   },
+  togetherai: {
+    enabled: true,
+  },
 });
 
 export const DEFAULT_MODEL = 'gpt-4o-mini';

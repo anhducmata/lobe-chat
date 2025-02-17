@@ -92,6 +92,7 @@ const CreateNewProvider = memo<CreateNewProviderProps>(({ onClose, open }) => {
             { label: 'OpenAI', value: 'openai' },
             { label: 'Anthropic', value: 'anthropic' },
             { label: 'Ollama', value: 'ollama' },
+            { label: 'TogetherAI', value: 'togetherai' },
           ]}
         />
       ),

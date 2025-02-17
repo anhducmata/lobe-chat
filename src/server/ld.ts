@@ -3,7 +3,7 @@ import urlJoin from 'url-join';
 
 import { BRANDING_NAME } from '@/const/branding';
 import { DEFAULT_LANG } from '@/const/locale';
-import { EMAIL_BUSINESS, EMAIL_SUPPORT, OFFICIAL_SITE, OFFICIAL_URL, X } from '@/const/url';
+import { EMAIL_BUSINESS, EMAIL_SUPPORT, OFFICIAL_SITE, OFFICIAL_URL } from '@/const/url';
 import { Locales } from '@/locales/resources';
 import { getCanonicalUrl } from '@/server/utils/url';
 
@@ -105,7 +105,6 @@ export class Ld {
       },
       'name': 'LobeHub',
       'sameAs': [
-        X,
         'https://github.com/lobehub',
         'https://medium.com/@lobehub',
         'https://www.youtube.com/@lobehub',

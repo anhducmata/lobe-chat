@@ -1,18 +1,11 @@
 'use client';
 
-import { FluentEmoji, Markdown } from '@lobehub/ui';
+import { FluentEmoji } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
-import { BRANDING_NAME } from '@/const/branding';
-import { isCustomBranding } from '@/const/version';
 import { useGreeting } from '@/hooks/useGreeting';
-import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
-
-import AgentsSuggest from './AgentsSuggest';
-import QuestionSuggest from './QuestionSuggest';
 
 const useStyles = createStyles(({ css, responsive }) => ({
   container: css`
@@ -40,11 +33,8 @@ const useStyles = createStyles(({ css, responsive }) => ({
 }));
 
 const InboxWelcome = memo(() => {
-  const { t } = useTranslation('welcome');
   const { styles } = useStyles();
-  const mobile = useServerConfigStore((s) => s.isMobile);
   const greeting = useGreeting();
-  const { showWelcomeSuggest, showCreateSession } = useServerConfigStore(featureFlagsSelectors);
 
   return (
     <Center padding={16} width={'100%'}>
@@ -53,17 +43,6 @@ const InboxWelcome = memo(() => {
           <FluentEmoji emoji={'👋'} size={40} type={'anim'} />
           <h1 className={styles.title}>{greeting}</h1>
         </Flexbox>
-        <Markdown className={styles.desc} variant={'chat'}>
-          {t(showCreateSession ? 'guide.defaultMessage' : 'guide.defaultMessageWithoutCreate', {
-            appName: BRANDING_NAME,
-          })}
-        </Markdown>
-        {showWelcomeSuggest && (
-          <>
-            <AgentsSuggest mobile={mobile} />
-            {!isCustomBranding && <QuestionSuggest mobile={mobile} />}
-          </>
-        )}
       </Flexbox>
     </Center>
   );

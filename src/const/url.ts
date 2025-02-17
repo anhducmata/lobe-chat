@@ -61,15 +61,10 @@ export const SESSION_CHAT_URL = (id: string = INBOX_SESSION_ID, mobile?: boolean
 export const imageUrl = (filename: string) => withBasePath(`/images/${filename}`);
 
 export const LOBE_URL_IMPORT_NAME = 'settings';
-export const EMAIL_SUPPORT = 'support@lobehub.com';
-export const EMAIL_BUSINESS = 'hello@lobehub.com';
-
-export const MEDIDUM = 'https://medium.com/@lobehub';
-export const X = 'https://x.com/lobehub';
+export const EMAIL_SUPPORT = 'anhducmata@gmail.com';
+export const EMAIL_BUSINESS = 'anhducmata@gmail.com';
 export const RELEASES_URL = urlJoin(GITHUB, 'releases');
-
 export const mailTo = (email: string) => `mailto:${email}`;
-
 export const AES_GCM_URL = 'https://datatracker.ietf.org/doc/html/draft-ietf-avt-srtp-aes-gcm-01';
 export const BASE_PROVIDER_DOC_URL = 'https://lobehub.com/docs/usage/providers';
 export const SITEMAP_BASE_URL = isDev ? '/sitemap.xml/' : 'sitemap';
